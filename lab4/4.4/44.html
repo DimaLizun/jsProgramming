@@ -1,0 +1,247 @@
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+var answers = {
+	1:3,
+	2:1,
+	3:3,
+	4:2,
+	5:1,
+	6:2,
+	7:2,
+	8:2,
+	9:1,
+	10:3,
+	11:3,
+	12:2,
+	13:2,
+	14:1,
+	15:3
+};
+
+var counter = 0;
+
+$(document).ready(function(){
+
+	$('.tests').addClass('active');
+	$('.tests > ul').eq(0).addClass('selected');
+
+	$('.tests > ul:not(.result) > li:not(:first-child)').on('click',function(){
+
+		var index = $(this).index();
+		var question = $(this).parent().index()+1;
+
+		if( answers[question]==index ){
+
+			counter++;
+
+			$('.tests > ul.result > li').eq(1).html( counter+' / '+($('.tests > ul').length-1) );
+		}
+
+		$(this).parent().removeClass('selected');
+		$('.tests > ul').eq(question).addClass('selected');
+	});
+
+	$('.tests > ul.result > li').eq(2).on('click',function(){
+
+		counter = 0;
+
+		$('.tests > ul.result').removeClass('selected');
+		$('.tests > ul').eq(0).addClass('selected');
+	});
+});
+
+</script>
+
+<style type="text/css">
+.tests{
+
+	width: 100%;
+	height: 600px;
+
+	background-color: grey;
+}
+
+.tests:not(.active) > ul:not(:first-child),
+.tests.active > ul:not(.selected){
+
+	display: none;
+}
+
+.tests > ul{
+
+	display: block;
+
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+
+	text-align: center;
+}
+
+.tests > ul > li{
+
+	display: block;
+
+	margin-bottom: 30px;
+}
+
+.tests > ul > li:first-child{
+
+	font-size: 36px;
+
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+
+.tests > ul.result > li:nth-child(2),
+.tests > ul:not(.result) > li:first-child{
+
+	color: black;
+}
+
+.tests > ul > li:not(:first-child){
+
+	font-size: 28px;
+	cursor: pointer;
+}
+
+.tests > ul.result > li:last-child:hover,
+.tests > ul:not(.result) > li:not(:first-child):hover{
+
+	color: yellow;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="tests">
+
+	<ul>
+		<li>Какой из этих предметов является инструментом симфонического оркестра?</li>
+		<li>Ножи</li>
+		<li>Вилки</li>
+		<li>Тарелки</li>
+	</ul>
+
+	<ul>
+		<li>Какого из этих стилей музыки не существует?</li>
+		<li>Пилон</li>
+		<li>Блэк</li>
+		<li>Джангл</li>
+	</ul>
+
+	<ul>
+		<li>Прием игры на гитаре, при котором палец одновременно зажимает все струны?</li>
+		<li>Диез</li>
+		<li>Бемоль</li>
+		<li>Баррэ</li>
+	</ul>
+
+	<ul>
+		<li>Какой из этих музыкальных инструментов не является смычковым?</li>
+		<li>Альт</li>
+		<li>Набат</li>
+		<li>Кобыз</li>
+	</ul>
+
+	<ul>
+		<li>Какой из этих темпов в музыке - самый быстрый?</li>
+		<li>Престо</li>
+		<li>Виво</li>
+		<li>Аллегро</li>
+	</ul>
+
+	<ul>
+		<li>Какой из музыкальных инструментов имеет наибольшее количество струн?</li>
+		<li>Классическая гитара</li>
+		<li>Мандолина</li>
+		<li>Домра</li>
+	</ul>
+
+	<ul>
+		<li>Название какого музыкального инструмента совпадает с названием геометрической фигуры?</li>
+		<li>Четырехугольник</li>
+		<li> Круг</li>
+		<li>Квадрат</li>
+	</ul>
+
+	<ul>
+		<li>Произведение для симфонического оркестра и солирующего инструмента?</li>
+		<li>Концерт</li>
+		<li>Симфония</li>
+		<li>Сюита</li>
+	</ul>
+
+	<ul>
+		<li>Высокий женский голос – это…?</li>
+		<li> Альт</li>
+		<li>Тенор</li>
+		<li>Контральто</li>
+	</ul>
+
+	<ul>
+		<li>Как называется часть атмосферы Солнца видимая во время полных затмений?</li>
+		<li>Ореол</li>
+		<li> Венец</li>
+		<li>Корона</li>
+	</ul>
+
+	<ul>
+		<li>Как назывался советский космический аппарат многоразового использования?</li>
+		<li> “Уран”</li>
+		<li>“Ураган”</li>
+		<li>“Буран”</li>
+	</ul>
+
+	<ul>
+		<li>Какая страна запустила первый искусственный спутник Земли?</li>
+		<li>США</li>
+		<li>СССР</li>
+		<li>Китай</li>
+	</ul>
+
+	<ul>
+		<li>В каком созвездии находится Полярная звезда?</li>
+		<li>Большая медведица</li>
+		<li>Малая медведица</li>
+		<li>Южная Рыба</li>
+	</ul>
+
+	<ul>
+		<li>Как называется газовая оболочка ядра кометы, образующая с ним голову кометы?</li>
+		<li>Квазар</li>
+		<li>Корона</li>
+		<li>Кома</li>
+	</ul>
+
+	<ul>
+		<li>Какая из этих планет не является спутником планеты Юпитер?</li>
+		<li>Ио</li>
+		<li>Фива</li>
+		<li>Титан</li>
+	</ul>
+
+	<ul class="result">
+
+		<li>Результат:</li>
+		<li></li>
+		<li>Пройти заново</li>
+	</ul>
+</div>
+
+
+
+</body>
+</html>

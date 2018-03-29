@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>4.1</title>
+  <meta charset="utf-8">
+</head>
+<body>
+
+  <div class="text">
+    Text
+  </div>
+
+  <p>test</p>
+
+
+
+  <script type="text/javascript">
+    function $(selector) {
+      const elements = document.querySelectorAll(selector);
+      const css = (prop, val ) => {
+        for(let element of elements) element.style[ prop ] = val;
+        return { css };
+      }
+      return { css };
+    }
+
+    $('.text').css('color', 'red').css('font-style', 'italic');
+    $('p').css('color','blue').css('color','blue');
+  </script>
+
+
+ 
+</body>
+</html>

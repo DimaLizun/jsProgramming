@@ -1,0 +1,19 @@
+ .lighting { width: 30%; border-collapse: collapse; border: 2px solid #000000; }
+ .lighting tr { text-align: center; font-weight: bold; line-height: 2; }
+ .lighting tr td { border: 1px solid #000000; }
+
+
+ .lighting_col { background-color: #99CCFF; }
+ .lighting_cell { background-color: #58d20c; }
+
+.lighting tr td:before{
+	content: '';
+	display: block;
+	margin: 15px;
+	width: 70px;
+	height: 70px;
+	border-radius: 35px;
+	background-color: green;
+}
+
+
